@@ -49,21 +49,21 @@ var OrderType;
     OrderType["PEG_SRF_VOL"] = "PSV";
 })(OrderType || (exports.OrderType = OrderType = {}));
 const isPegBenchOrder = (orderType) => {
-    if (orderType == OrderType.PEG_BENCH || orderType == "PEGBENCH")
+    if (orderType === OrderType.PEG_BENCH || orderType === "PEGBENCH")
         return true;
     else
         return false;
 };
 exports.isPegBenchOrder = isPegBenchOrder;
 const isPegBestOrder = (orderType) => {
-    if (orderType == OrderType.PEG_BEST || orderType == "PEGBEST")
+    if (orderType === OrderType.PEG_BEST || orderType === "PEGBEST")
         return true;
     else
         return false;
 };
 exports.isPegBestOrder = isPegBestOrder;
 const isPegMidOrder = (orderType) => {
-    if (orderType == OrderType.PEG_MID || orderType == "PEGMID")
+    if (orderType === OrderType.PEG_MID || orderType === "PEGMID")
         return true;
     else
         return false;

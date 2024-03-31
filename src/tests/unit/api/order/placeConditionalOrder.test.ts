@@ -2,22 +2,22 @@
  * This file implement test code for the placeOrder function .
  */
 import {
-  ConjunctionConnection,
-  Contract,
-  ErrorCode,
-  EventName,
-  ExecutionCondition,
-  IBApi,
-  MarginCondition,
-  Order,
-  OrderAction,
-  OrderCondition,
-  OrderType,
-  PercentChangeCondition,
-  PriceCondition,
-  TimeCondition,
-  TriggerMethod,
-  VolumeCondition,
+    ConjunctionConnection,
+    Contract,
+    ErrorCode,
+    EventName,
+    ExecutionCondition,
+    IBApi,
+    MarginCondition,
+    Order,
+    OrderAction,
+    OrderCondition,
+    OrderType,
+    PercentChangeCondition,
+    PriceCondition,
+    TimeCondition,
+    TriggerMethod,
+    VolumeCondition,
 } from "../../../..";
 import configuration from "../../../../common/configuration";
 import logger from "../../../../common/logger";
@@ -104,7 +104,7 @@ describe("Place Conditional Orders", () => {
       ib.placeOrder(refId, refContract, refOrder);
     })
       .on(EventName.openOrder, (orderId, contract, order, _orderState) => {
-        if (orderId == refId && !isDone) {
+        if (orderId === refId && !isDone) {
           isDone = true;
           expect(contract.symbol).toEqual(refContract.symbol);
           expect(order.totalQuantity).toEqual(refOrder.totalQuantity);
@@ -160,7 +160,7 @@ describe("Place Conditional Orders", () => {
       ib.placeOrder(refId, refContract, refOrder);
     })
       .on(EventName.openOrder, (orderId, contract, order, _orderState) => {
-        if (orderId == refId && !isDone) {
+        if (orderId === refId && !isDone) {
           isDone = true;
           expect(contract.symbol).toEqual(refContract.symbol);
           expect(order.totalQuantity).toEqual(refOrder.totalQuantity);
@@ -216,7 +216,7 @@ describe("Place Conditional Orders", () => {
       ib.placeOrder(refId, refContract, refOrder);
     })
       .on(EventName.openOrder, (orderId, contract, order, _orderState) => {
-        if (orderId == refId && !isDone) {
+        if (orderId === refId && !isDone) {
           isDone = true;
           expect(contract.symbol).toEqual(refContract.symbol);
           expect(order.totalQuantity).toEqual(refOrder.totalQuantity);
@@ -272,7 +272,7 @@ describe("Place Conditional Orders", () => {
       ib.placeOrder(refId, refContract, refOrder);
     })
       .on(EventName.openOrder, (orderId, contract, order, _orderState) => {
-        if (orderId == refId && !isDone) {
+        if (orderId === refId && !isDone) {
           isDone = true;
           expect(contract.symbol).toEqual(refContract.symbol);
           expect(order.totalQuantity).toEqual(refOrder.totalQuantity);
@@ -328,7 +328,7 @@ describe("Place Conditional Orders", () => {
       ib.placeOrder(refId, refContract, refOrder);
     })
       .on(EventName.openOrder, (orderId, contract, order, _orderState) => {
-        if (orderId == refId && !isDone) {
+        if (orderId === refId && !isDone) {
           isDone = true;
           expect(contract.symbol).toEqual(refContract.symbol);
           expect(order.totalQuantity).toEqual(refOrder.totalQuantity);
@@ -384,7 +384,7 @@ describe("Place Conditional Orders", () => {
       ib.placeOrder(refId, refContract, refOrder);
     })
       .on(EventName.openOrder, (orderId, contract, order, _orderState) => {
-        if (orderId == refId && !isDone) {
+        if (orderId === refId && !isDone) {
           isDone = true;
           expect(contract.symbol).toEqual(refContract.symbol);
           expect(order.totalQuantity).toEqual(refOrder.totalQuantity);
@@ -447,7 +447,7 @@ describe("Place Conditional Orders", () => {
       ib.placeOrder(refId, refContract, refOrder);
     })
       .on(EventName.openOrder, (orderId, contract, order, _orderState) => {
-        if (orderId == refId && !isDone) {
+        if (orderId === refId && !isDone) {
           isDone = true;
           expect(contract.symbol).toEqual(refContract.symbol);
           expect(order.totalQuantity).toEqual(refOrder.totalQuantity);

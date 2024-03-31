@@ -1112,7 +1112,7 @@ class Encoder {
             tokens.push(order.manualOrderTime);
         if (this.serverVersion >= min_server_version_1.default.PEGBEST_PEGMID_OFFSETS) {
             let sendMidOffsets = false;
-            if (contract.exchange == "IBKRATS")
+            if (contract.exchange === "IBKRATS")
                 tokens.push(order.minTradeQty);
             if ((0, orderType_1.isPegBestOrder)(order.orderType)) {
                 tokens.push(order.minCompeteSize);
@@ -1139,7 +1139,7 @@ class Encoder {
             return this.emitError("This feature is only available for versions of TWS >= 13.", errorCode_1.ErrorCode.UPDATE_TWS, reqId);
         }
         if (this.serverVersion >= min_server_version_1.default.FA_PROFILE_DESUPPORT) {
-            if (faDataType == fad_data_type_1.default.PROFILES) {
+            if (faDataType === fad_data_type_1.default.PROFILES) {
                 return this.emitError("FA Profile is not supported anymore, use FA Group instead.", errorCode_1.ErrorCode.UPDATE_TWS, reqId);
             }
         }
@@ -1856,7 +1856,7 @@ class Encoder {
             return this.emitError("This feature is only available for versions of TWS >= 13.", errorCode_1.ErrorCode.UPDATE_TWS, -1);
         }
         if (this.serverVersion >= min_server_version_1.default.FA_PROFILE_DESUPPORT) {
-            if (faDataType == fad_data_type_1.default.PROFILES) {
+            if (faDataType === fad_data_type_1.default.PROFILES) {
                 return this.emitError("FA Profile is not supported anymore, use FA Group instead.", errorCode_1.ErrorCode.UPDATE_TWS, -1);
             }
         }

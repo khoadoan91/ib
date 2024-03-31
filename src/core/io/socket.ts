@@ -1,5 +1,4 @@
 import { Buffer } from "buffer";
-import net from "net-websocket-polyfill";
 import { TextEncoder } from "util";
 
 import {
@@ -10,6 +9,7 @@ import {
 import { EventName } from "../../api/data/enum/event-name";
 import MIN_SERVER_VER from "../../api/data/enum/min-server-version";
 import { ErrorCode } from "../../common/errorCode";
+import { CustomSocket } from "../net/socket";
 import { Controller } from "./controller";
 import { OUT_MSG_ID } from "./encoder";
 
@@ -69,7 +69,7 @@ export class Socket {
   }
 
   /** The TCP client socket. */
-  private client?: net.Socket;
+  private client?: CustomSocket;
 
   /** `connected` if the TCP socket is connected and [[OUT_MSG_ID.START_API]] has been sent.  */
   private _status: ConnectionStatus = ConnectionStatus.Disconnected;
@@ -160,8 +160,8 @@ export class Socket {
     this._v100MessageBuffer = Buffer.alloc(0);
 
     // create and connect TCP socket
-
-    this.client = net
+    this.client = new CustomSocket();
+    this.client = this.client
       .connect(
         {
           host: this.options.host,

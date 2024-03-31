@@ -39,7 +39,7 @@ describe("IBApi reqMatchingSymbols Tests", () => {
         done();
       })
       .on(EventName.error, (err, code, reqId) => {
-        if (reqId == refId) done(`[${reqId}] ${err.message} (#${code})`);
+        if (reqId === refId) done(`[${reqId}] ${err.message} (#${code})`);
       });
 
     ib.connect();
@@ -62,7 +62,7 @@ describe("IBApi reqMatchingSymbols Tests", () => {
         done();
       })
       .on(EventName.error, (err, code, reqId) => {
-        if (reqId == refId) done(`[${reqId}] ${err.message} (#${code})`);
+        if (reqId === refId) done(`[${reqId}] ${err.message} (#${code})`);
       });
 
     ib.connect();
@@ -85,7 +85,7 @@ describe("IBApi reqMatchingSymbols Tests", () => {
         done();
       })
       .on(EventName.error, (err, code, reqId) => {
-        if (reqId == refId) done(`[${reqId}] ${err.message} (#${code})`);
+        if (reqId === refId) done(`[${reqId}] ${err.message} (#${code})`);
       });
 
     ib.connect();

@@ -1,11 +1,11 @@
 import {
-  ContractDetails,
-  ErrorCode,
-  EventName,
-  IBApi,
-  Instrument,
-  LocationCode,
-  ScanCode,
+    ContractDetails,
+    ErrorCode,
+    EventName,
+    IBApi,
+    Instrument,
+    LocationCode,
+    ScanCode,
 } from "../../..";
 import configuration from "../../../common/configuration";
 
@@ -79,8 +79,8 @@ describe("IBApi market scanner tests", () => {
         done();
       })
       .on(EventName.error, (err, code, reqId) => {
-        if (reqId == refId) {
-          if (code == ErrorCode.SCANNER_LOW_PRECISION) return;
+        if (reqId === refId) {
+          if (code === ErrorCode.SCANNER_LOW_PRECISION) return;
           done(`[${reqId}] ${err.message} (#${code})`);
         }
       });

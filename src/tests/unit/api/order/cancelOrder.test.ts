@@ -2,15 +2,15 @@
  * This file implement test code for the placeOrder function .
  */
 import {
-  Contract,
-  ErrorCode,
-  EventName,
-  IBApi,
-  Order,
-  OrderAction,
-  OrderStatus,
-  OrderType,
-  TimeInForce,
+    Contract,
+    ErrorCode,
+    EventName,
+    IBApi,
+    Order,
+    OrderAction,
+    OrderStatus,
+    OrderType,
+    TimeInForce,
 } from "../../../..";
 import configuration from "../../../../common/configuration";
 import logger from "../../../../common/logger";
@@ -101,8 +101,8 @@ describe("CancelOrder", () => {
             if (error.message.includes("Warning:")) {
               logger.warn(msg);
             } else if (
-              code == ErrorCode.ORDER_CANCELLED &&
-              reqId == refId &&
+              code === ErrorCode.ORDER_CANCELLED &&
+              reqId === refId &&
               cancelling
             ) {
               logger.info(msg);

@@ -2,22 +2,22 @@
  * This file implement test code for the placeOrder function .
  */
 import {
-  Contract,
-  ErrorCode,
-  EventName,
-  IBApi,
-  Order,
-  OrderAction,
-  OrderType,
-  TimeInForce,
+    Contract,
+    ErrorCode,
+    EventName,
+    IBApi,
+    Order,
+    OrderAction,
+    OrderType,
+    TimeInForce,
 } from "../../../..";
 import configuration from "../../../../common/configuration";
 import logger from "../../../../common/logger";
 import {
-  sample_crypto,
-  sample_etf,
-  sample_option,
-  sample_stock,
+    sample_crypto,
+    sample_etf,
+    sample_option,
+    sample_stock,
 } from "../../sample-data/contracts";
 
 describe("Place Orders", () => {
@@ -61,7 +61,7 @@ describe("Place Orders", () => {
       ib.placeOrder(refId, refContract, refOrder);
     })
       .on(EventName.openOrder, (orderId, contract, order, _orderState) => {
-        if (orderId == refId && !isDone) {
+        if (orderId === refId && !isDone) {
           isDone = true;
           expect(contract.symbol).toEqual(refContract.symbol);
           expect(order.totalQuantity).toEqual(refOrder.totalQuantity);
@@ -85,7 +85,7 @@ describe("Place Orders", () => {
               error.message.includes("Order Message:")
             ) {
               logger.warn(msg);
-            } else if (code == ErrorCode.NO_TRADING_PERMISSIONS) {
+            } else if (code === ErrorCode.NO_TRADING_PERMISSIONS) {
               // Ignore this error for tests
               logger.warn(msg);
               done();
@@ -121,7 +121,7 @@ describe("Place Orders", () => {
       ib.placeOrder(refId, refContract, refOrder);
     })
       .on(EventName.openOrder, (orderId, contract, order, orderState) => {
-        if (orderId == refId && !isDone) {
+        if (orderId === refId && !isDone) {
           expect(contract.symbol).toEqual(refContract.symbol);
           expect(order.totalQuantity).toEqual(refOrder.totalQuantity);
           if (orderState.minCommission || orderState.maxCommission) {
@@ -148,7 +148,7 @@ describe("Place Orders", () => {
               error.message.includes("Order Message:")
             ) {
               logger.warn(msg);
-            } else if (code == ErrorCode.NO_TRADING_PERMISSIONS) {
+            } else if (code === ErrorCode.NO_TRADING_PERMISSIONS) {
               // Ignore this error for tests
               logger.warn(msg);
               done();
@@ -183,7 +183,7 @@ describe("Place Orders", () => {
       ib.placeOrder(refId, refContract, refOrder);
     })
       .on(EventName.openOrder, (orderId, contract, order, _orderState) => {
-        if (orderId == refId && !isDone) {
+        if (orderId === refId && !isDone) {
           isDone = true;
           expect(contract.symbol).toEqual(refContract.symbol);
           expect(order.totalQuantity).toEqual(refOrder.totalQuantity);
@@ -207,7 +207,7 @@ describe("Place Orders", () => {
               error.message.includes("Order Message:")
             ) {
               logger.warn(msg);
-            } else if (code == ErrorCode.NO_TRADING_PERMISSIONS) {
+            } else if (code === ErrorCode.NO_TRADING_PERMISSIONS) {
               // Ignore this error for tests
               logger.warn(msg);
               done();
@@ -242,7 +242,7 @@ describe("Place Orders", () => {
       ib.placeOrder(refId, refContract, refOrder);
     })
       .on(EventName.openOrder, (orderId, contract, order, _orderState) => {
-        if (orderId == refId && !isDone) {
+        if (orderId === refId && !isDone) {
           isDone = true;
           expect(contract.symbol).toEqual(refContract.symbol);
           expect(order.totalQuantity).toEqual(refOrder.totalQuantity);
@@ -266,7 +266,7 @@ describe("Place Orders", () => {
               error.message.includes("Order Message:")
             ) {
               logger.warn(msg);
-            } else if (code == ErrorCode.NO_TRADING_PERMISSIONS) {
+            } else if (code === ErrorCode.NO_TRADING_PERMISSIONS) {
               // Ignore this error for tests
               logger.warn(msg);
               done();

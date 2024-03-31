@@ -531,7 +531,7 @@ class IBApi extends eventemitter3_1.EventEmitter {
      */
     reqWshEventData(reqId, wshEventData) {
         let wshEventData2;
-        if (typeof wshEventData == "number")
+        if (typeof wshEventData === "number")
             wshEventData2 = new wsh_1.default(wshEventData);
         else
             wshEventData2 = wshEventData;

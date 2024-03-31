@@ -47,7 +47,7 @@ const warn = (...args) => {
 };
 const error = (...args) => {
     // Prevent hiding of any stack traces
-    const newArgs = [timeStamp(), "Error:", ...args].map((x) => colors_1.default.bold.red(typeof x == "string" ? x : util.inspect(x, { showHidden: false, depth: null })));
+    const newArgs = [timeStamp(), "Error:", ...args].map((x) => colors_1.default.bold.red(typeof x === "string" ? x : util.inspect(x, { showHidden: false, depth: null })));
     console.error(...newArgs);
 };
 const testError = (...args) => {

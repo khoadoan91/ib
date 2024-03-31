@@ -1518,7 +1518,7 @@ export declare interface IBApi {
      *
      * articleType: The type of news article (0 - plain text or html, 1 - binary data / pdf)
      *
-     * articleText:	The body of article (if articleType == 1, the binary data is encoded using the Base64 scheme)
+     * articleText:	The body of article (if articleType === 1, the binary data is encoded using the Base64 scheme)
      *
      * @see [[reqNewsArticle]]
      */

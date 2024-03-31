@@ -38,11 +38,11 @@ describe("IBApi Fundamental Data", () => {
       })
       .on(EventName.error, (err, code, reqId) => {
         const msg = `[${reqId}] ${err.message} (#${code})`;
-        if (code == ErrorCode.NEWS_FEED_NOT_ALLOWED) {
+        if (code === ErrorCode.NEWS_FEED_NOT_ALLOWED) {
           // Ignore this error for tests
           logger.warn(msg);
           done();
-        } else if (reqId == refId) {
+        } else if (reqId === refId) {
           done(msg);
         }
       });
@@ -68,11 +68,11 @@ describe("IBApi Fundamental Data", () => {
       })
       .on(EventName.error, (err, code, reqId) => {
         const msg = `[${reqId}] ${err.message} (#${code})`;
-        if (code == ErrorCode.NEWS_FEED_NOT_ALLOWED) {
+        if (code === ErrorCode.NEWS_FEED_NOT_ALLOWED) {
           // Ignore this error for tests
           logger.warn(msg);
           done();
-        } else if (reqId == refId) {
+        } else if (reqId === refId) {
           done(msg);
         }
       });
@@ -101,11 +101,11 @@ describe("IBApi Fundamental Data", () => {
       })
       .on(EventName.error, (err, code, reqId) => {
         const msg = `[${reqId}] ${err.message} (#${code})`;
-        if (code == ErrorCode.NEWS_FEED_NOT_ALLOWED) {
+        if (code === ErrorCode.NEWS_FEED_NOT_ALLOWED) {
           // Ignore this error for tests
           logger.warn(msg);
           done();
-        } else if (reqId == refId) {
+        } else if (reqId === refId) {
           done(msg);
         }
       });

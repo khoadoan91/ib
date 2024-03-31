@@ -428,7 +428,7 @@ export class Decoder {
       while (true) {
         const escapeIndex: number = v.indexOf("\\u");
 
-        if (escapeIndex == -1 || v.length - escapeIndex < 6) {
+        if (escapeIndex === -1 || v.length - escapeIndex < 6) {
           break;
         }
 
@@ -1554,13 +1554,13 @@ export class Decoder {
     }
 
     let impliedVol = this.readDouble();
-    if (impliedVol == -1) {
+    if (impliedVol === -1) {
       // -1 is the "not yet computed" indicator
       impliedVol = undefined;
     }
 
     let delta = this.readDouble();
-    if (delta == -2) {
+    if (delta === -2) {
       // -2 is the "not yet computed" indicator
       delta = undefined;
     }
@@ -1578,13 +1578,13 @@ export class Decoder {
       tickType === TickType.DELAYED_MODEL_OPTION
     ) {
       optPrice = this.readDouble();
-      if (optPrice == -1) {
+      if (optPrice === -1) {
         // -1 is the "not yet computed" indicator
         optPrice = undefined;
       }
 
       pvDividend = this.readDouble();
-      if (pvDividend == -1) {
+      if (pvDividend === -1) {
         // -1 is the "not yet computed" indicator
         pvDividend = undefined;
       }
@@ -1592,25 +1592,25 @@ export class Decoder {
 
     if (version >= 6) {
       gamma = this.readDouble();
-      if (gamma == -2) {
+      if (gamma === -2) {
         // -2 is the "not yet computed" indicator
         gamma = undefined;
       }
 
       vega = this.readDouble();
-      if (vega == -2) {
+      if (vega === -2) {
         // -2 is the "not yet computed" indicator
         vega = undefined;
       }
 
       theta = this.readDouble();
-      if (theta == -2) {
+      if (theta === -2) {
         // -2 is the "not yet computed" indicator
         theta = undefined;
       }
 
       undPrice = this.readDouble();
-      if (undPrice == -1) {
+      if (undPrice === -1) {
         // -1 is the "not yet computed" indicator
         undPrice = undefined;
       }
@@ -2970,7 +2970,7 @@ class OrderDecoder {
 
   readHidden(): void {
     if (this.version >= 4) {
-      this.order.hidden = this.decoder.readInt() == 1;
+      this.order.hidden = this.decoder.readInt() === 1;
     }
   }
 
@@ -3036,7 +3036,7 @@ class OrderDecoder {
     if (this.version >= 9) {
       this.order.shortSaleSlot = this.decoder.readInt();
       this.order.designatedLocation = this.decoder.readStr();
-      if (this.version == 51) {
+      if (this.version === 51) {
         this.decoder.readInt(); // exemptCode
       } else if (this.version >= 23) {
         this.order.exemptCode = this.decoder.readInt();
@@ -3144,9 +3144,9 @@ class OrderDecoder {
     if (this.version >= 11) {
       this.order.volatility = this.decoder.readDoubleOrUndefined();
       this.order.volatilityType = this.decoder.readInt();
-      if (this.version == 11) {
+      if (this.version === 11) {
         const receivedInt = this.decoder.readInt();
-        this.order.deltaNeutralOrderType = receivedInt == 0 ? "NONE" : "MKT";
+        this.order.deltaNeutralOrderType = receivedInt === 0 ? "NONE" : "MKT";
       } else {
         this.order.deltaNeutralOrderType = this.decoder.readStr();
         this.order.deltaNeutralAuxPrice = this.decoder.readDoubleOrUndefined();
@@ -3178,7 +3178,7 @@ class OrderDecoder {
         }
       }
       this.order.continuousUpdate = this.decoder.readInt();
-      if (this.version == 26) {
+      if (this.version === 26) {
         this.order.stockRangeLower = this.decoder.readDouble();
         this.order.stockRangeUpper = this.decoder.readDouble();
       }

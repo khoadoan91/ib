@@ -38,7 +38,7 @@ describe("IBApi Market data Tests", () => {
         })
             .on(__1.EventName.tickPrice, (reqId, _field, _value) => {
             expect(reqId).toEqual(refId);
-            if (reqId == refId)
+            if (reqId === refId)
                 received = true;
             // console.log(_field, _value);
         })
@@ -63,7 +63,7 @@ describe("IBApi Market data Tests", () => {
         })
             .on(__1.EventName.tickPrice, (reqId, _field, _value) => {
             expect(reqId).toEqual(refId);
-            if (reqId == refId)
+            if (reqId === refId)
                 received = true;
             // console.log(_field, _value);
         })
@@ -88,7 +88,7 @@ describe("IBApi Market data Tests", () => {
         })
             .on(__1.EventName.tickPrice, (reqId, _field, _value) => {
             expect(reqId).toEqual(refId);
-            if (reqId == refId)
+            if (reqId === refId)
                 received = true;
         })
             .on(__1.EventName.tickSnapshotEnd, (reqId) => {
@@ -112,7 +112,7 @@ describe("IBApi Market data Tests", () => {
         })
             .on(__1.EventName.tickPrice, (reqId, _field, _value) => {
             expect(reqId).toEqual(refId);
-            if (reqId == refId)
+            if (reqId === refId)
                 received = true;
             // console.log(_field, _value);
         })
@@ -137,7 +137,7 @@ describe("IBApi Market data Tests", () => {
         })
             .on(__1.EventName.tickPrice, (reqId, _field, _value) => {
             expect(reqId).toEqual(refId);
-            if (reqId == refId)
+            if (reqId === refId)
                 received = true;
             // console.log(_field, _value);
         })
@@ -162,7 +162,7 @@ describe("IBApi Market data Tests", () => {
         })
             .on(__1.EventName.tickPrice, (reqId, _field, _value) => {
             expect(reqId).toEqual(refId);
-            if (reqId == refId)
+            if (reqId === refId)
                 received = true;
             // console.log(_field, _value);
         })
@@ -187,7 +187,7 @@ describe("IBApi Market data Tests", () => {
         })
             .on(__1.EventName.tickPrice, (reqId, _field, _value) => {
             expect(reqId).toEqual(refId);
-            if (reqId == refId)
+            if (reqId === refId)
                 received = true;
             // console.log(_field, _value);
         })

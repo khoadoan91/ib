@@ -1642,7 +1642,7 @@ function tagValuesToTokens(tagValues: TagValue[]): unknown[] {
 
     if (this.serverVersion >= MIN_SERVER_VER.PEGBEST_PEGMID_OFFSETS) {
       let sendMidOffsets = false;
-      if (contract.exchange == "IBKRATS") tokens.push(order.minTradeQty);
+      if (contract.exchange === "IBKRATS") tokens.push(order.minTradeQty);
       if (isPegBestOrder(order.orderType)) {
         tokens.push(order.minCompeteSize);
         tokens.push(order.competeAgainstBestOffset);
@@ -1676,7 +1676,7 @@ function tagValuesToTokens(tagValues: TagValue[]): unknown[] {
     }
 
     if (this.serverVersion >= MIN_SERVER_VER.FA_PROFILE_DESUPPORT) {
-      if (faDataType == FADataType.PROFILES) {
+      if (faDataType === FADataType.PROFILES) {
         return this.emitError(
           "FA Profile is not supported anymore, use FA Group instead.",
           ErrorCode.UPDATE_TWS,
@@ -2848,7 +2848,7 @@ function tagValuesToTokens(tagValues: TagValue[]): unknown[] {
     }
 
     if (this.serverVersion >= MIN_SERVER_VER.FA_PROFILE_DESUPPORT) {
-      if (faDataType == FADataType.PROFILES) {
+      if (faDataType === FADataType.PROFILES) {
         return this.emitError(
           "FA Profile is not supported anymore, use FA Group instead.",
           ErrorCode.UPDATE_TWS,

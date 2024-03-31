@@ -43,7 +43,7 @@ describe("IBApi Histogram data Tests", () => {
         })
         .on(EventName.disconnected, done)
         .on(EventName.error, (err, code, requestID) => {
-          if (requestID == referenceID) {
+          if (requestID === referenceID) {
             done(`[${requestID}] ${err.message} (#${code})`);
           }
         });

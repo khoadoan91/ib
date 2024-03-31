@@ -51,7 +51,7 @@ describe("IBApi Historical data Tests", () => {
                 expect(counter).toEqual(30);
                 done();
             }
-            else if (counter++ == 29) {
+            else if (counter++ === 29) {
                 expect(time).toEqual("1696622399");
                 expect(open).toEqual(429.5);
                 expect(high).toEqual(429.6);
@@ -63,7 +63,7 @@ describe("IBApi Historical data Tests", () => {
             }
         })
             .on(__1.EventName.error, (err, code, reqId) => {
-            if (reqId == refId)
+            if (reqId === refId)
                 done(`[${reqId}] ${err.message} (#${code})`);
         });
         ib.connect();
@@ -92,7 +92,7 @@ describe("IBApi Historical data Tests", () => {
                 expect(counter).toEqual(2);
                 done();
             }
-            else if (counter++ == 1) {
+            else if (counter++ === 1) {
                 expect(time).toEqual("1704916785");
                 expect(open).toEqual(25.65);
                 expect(high).toEqual(25.65);
@@ -104,7 +104,7 @@ describe("IBApi Historical data Tests", () => {
             }
         })
             .on(__1.EventName.error, (err, code, reqId) => {
-            if (reqId == refId)
+            if (reqId === refId)
                 done(`[${reqId}] ${err.message} (#${code})`);
         });
         ib.connect();
@@ -133,7 +133,7 @@ describe("IBApi Historical data Tests", () => {
                 expect(counter).toEqual(5);
                 done();
             }
-            else if (counter++ == 4) {
+            else if (counter++ === 4) {
                 expect(time).toEqual("20230901");
                 expect(open).toEqual(437.3);
                 expect(high).toEqual(453.67);
@@ -145,7 +145,7 @@ describe("IBApi Historical data Tests", () => {
             }
         })
             .on(__1.EventName.error, (err, code, reqId) => {
-            if (reqId == refId)
+            if (reqId === refId)
                 done(`[${reqId}] ${err.message} (#${code})`);
         });
         ib.connect();
@@ -174,7 +174,7 @@ describe("IBApi Historical data Tests", () => {
                 expect(counter).toEqual(13);
                 done();
             }
-            else if (counter++ == 12) {
+            else if (counter++ === 12) {
                 expect(time).toEqual("20230901");
                 expect(open).toEqual(451.53);
                 expect(high).toEqual(453.67);
@@ -186,7 +186,7 @@ describe("IBApi Historical data Tests", () => {
             }
         })
             .on(__1.EventName.error, (err, code, reqId) => {
-            if (reqId == refId)
+            if (reqId === refId)
                 done(`[${reqId}] ${err.message} (#${code})`);
         });
         ib.connect();
@@ -205,7 +205,7 @@ describe("IBApi Historical data Tests", () => {
             done();
         })
             .on(__1.EventName.error, (err, code, reqId) => {
-            if (reqId == refId)
+            if (reqId === refId)
                 done(`[${reqId}] ${err.message} (#${code})`);
         });
         const contract = new __1.Stock("SPY");

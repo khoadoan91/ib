@@ -52,7 +52,7 @@ describe("Place Conditional Orders", () => {
             ib.placeOrder(refId, refContract, refOrder);
         })
             .on(__1.EventName.openOrder, (orderId, contract, order, _orderState) => {
-            if (orderId == refId && !isDone) {
+            if (orderId === refId && !isDone) {
                 isDone = true;
                 expect(contract.symbol).toEqual(refContract.symbol);
                 expect(order.totalQuantity).toEqual(refOrder.totalQuantity);
@@ -96,7 +96,7 @@ describe("Place Conditional Orders", () => {
             ib.placeOrder(refId, refContract, refOrder);
         })
             .on(__1.EventName.openOrder, (orderId, contract, order, _orderState) => {
-            if (orderId == refId && !isDone) {
+            if (orderId === refId && !isDone) {
                 isDone = true;
                 expect(contract.symbol).toEqual(refContract.symbol);
                 expect(order.totalQuantity).toEqual(refOrder.totalQuantity);
@@ -140,7 +140,7 @@ describe("Place Conditional Orders", () => {
             ib.placeOrder(refId, refContract, refOrder);
         })
             .on(__1.EventName.openOrder, (orderId, contract, order, _orderState) => {
-            if (orderId == refId && !isDone) {
+            if (orderId === refId && !isDone) {
                 isDone = true;
                 expect(contract.symbol).toEqual(refContract.symbol);
                 expect(order.totalQuantity).toEqual(refOrder.totalQuantity);
@@ -184,7 +184,7 @@ describe("Place Conditional Orders", () => {
             ib.placeOrder(refId, refContract, refOrder);
         })
             .on(__1.EventName.openOrder, (orderId, contract, order, _orderState) => {
-            if (orderId == refId && !isDone) {
+            if (orderId === refId && !isDone) {
                 isDone = true;
                 expect(contract.symbol).toEqual(refContract.symbol);
                 expect(order.totalQuantity).toEqual(refOrder.totalQuantity);
@@ -228,7 +228,7 @@ describe("Place Conditional Orders", () => {
             ib.placeOrder(refId, refContract, refOrder);
         })
             .on(__1.EventName.openOrder, (orderId, contract, order, _orderState) => {
-            if (orderId == refId && !isDone) {
+            if (orderId === refId && !isDone) {
                 isDone = true;
                 expect(contract.symbol).toEqual(refContract.symbol);
                 expect(order.totalQuantity).toEqual(refOrder.totalQuantity);
@@ -272,7 +272,7 @@ describe("Place Conditional Orders", () => {
             ib.placeOrder(refId, refContract, refOrder);
         })
             .on(__1.EventName.openOrder, (orderId, contract, order, _orderState) => {
-            if (orderId == refId && !isDone) {
+            if (orderId === refId && !isDone) {
                 isDone = true;
                 expect(contract.symbol).toEqual(refContract.symbol);
                 expect(order.totalQuantity).toEqual(refOrder.totalQuantity);
@@ -323,7 +323,7 @@ describe("Place Conditional Orders", () => {
             ib.placeOrder(refId, refContract, refOrder);
         })
             .on(__1.EventName.openOrder, (orderId, contract, order, _orderState) => {
-            if (orderId == refId && !isDone) {
+            if (orderId === refId && !isDone) {
                 isDone = true;
                 expect(contract.symbol).toEqual(refContract.symbol);
                 expect(order.totalQuantity).toEqual(refOrder.totalQuantity);

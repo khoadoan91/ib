@@ -46,19 +46,19 @@ export enum OrderType {
 }
 
 export const isPegBenchOrder = (orderType: OrderType): boolean => {
-  if (orderType == OrderType.PEG_BENCH || (orderType as string) == "PEGBENCH")
+  if (orderType === OrderType.PEG_BENCH || (orderType as string) === "PEGBENCH")
     return true;
   else return false;
 };
 
 export const isPegBestOrder = (orderType: OrderType): boolean => {
-  if (orderType == OrderType.PEG_BEST || (orderType as string) == "PEGBEST")
+  if (orderType === OrderType.PEG_BEST || (orderType as string) === "PEGBEST")
     return true;
   else return false;
 };
 
 export const isPegMidOrder = (orderType: OrderType): boolean => {
-  if (orderType == OrderType.PEG_MID || (orderType as string) == "PEGMID")
+  if (orderType === OrderType.PEG_MID || (orderType as string) === "PEGMID")
     return true;
   else return false;
 };

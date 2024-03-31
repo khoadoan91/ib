@@ -60,8 +60,8 @@ describe("IBApi market scanner tests", () => {
             done();
         })
             .on(__1.EventName.error, (err, code, reqId) => {
-            if (reqId == refId) {
-                if (code == __1.ErrorCode.SCANNER_LOW_PRECISION)
+            if (reqId === refId) {
+                if (code === __1.ErrorCode.SCANNER_LOW_PRECISION)
                     return;
                 done(`[${reqId}] ${err.message} (#${code})`);
             }

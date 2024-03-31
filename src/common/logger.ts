@@ -26,7 +26,7 @@ const warn = (...args: any[]) => {
 const error = (...args: any[]) => {
   // Prevent hiding of any stack traces
   const newArgs = [timeStamp(), "Error:", ...args].map((x) =>
-    colors.bold.red(typeof x == "string" ? x : util.inspect(x, { showHidden: false, depth: null })),
+    colors.bold.red(typeof x === "string" ? x : util.inspect(x, { showHidden: false, depth: null })),
   );
 
   console.error(...newArgs);

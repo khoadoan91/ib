@@ -64,8 +64,8 @@ describe("CancelOrder", () => {
                 if (error.message.includes("Warning:")) {
                     logger_1.default.warn(msg);
                 }
-                else if (code == __1.ErrorCode.ORDER_CANCELLED &&
-                    reqId == refId &&
+                else if (code === __1.ErrorCode.ORDER_CANCELLED &&
+                    reqId === refId &&
                     cancelling) {
                     logger_1.default.info(msg);
                     done();

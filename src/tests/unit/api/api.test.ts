@@ -80,7 +80,7 @@ describe("IBApi Tests", () => {
         done();
       })
       .on(EventName.error, (err, code, reqId) => {
-        if (reqId == refId) done(`[${reqId}] ${err.message} (#${code})`);
+        if (reqId === refId) done(`[${reqId}] ${err.message} (#${code})`);
       });
 
     ib.connect().reqPnL(refId, _account);
@@ -114,7 +114,7 @@ describe("IBApi Tests", () => {
         received = true;
       },
     ).on(EventName.error, (err, code, reqId) => {
-      if (reqId == refId) done(`[${reqId}] ${err.message} (#${code})`);
+      if (reqId === refId) done(`[${reqId}] ${err.message} (#${code})`);
     });
 
     ib.connect().reqPnLSingle(refId, _account, null, _conId);

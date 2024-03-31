@@ -5,12 +5,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Socket = exports.ConnectionStatus = void 0;
 const buffer_1 = require("buffer");
-const net_websocket_polyfill_1 = __importDefault(require("net-websocket-polyfill"));
 const util_1 = require("util");
 const api_1 = require("../../api/api");
 const event_name_1 = require("../../api/data/enum/event-name");
 const min_server_version_1 = __importDefault(require("../../api/data/enum/min-server-version"));
 const errorCode_1 = require("../../common/errorCode");
+const socket_1 = require("../net/socket");
 const encoder_1 = require("./encoder");
 /**
  * @hidden
@@ -124,7 +124,8 @@ class Socket {
         this.waitingAsync = false;
         this._v100MessageBuffer = buffer_1.Buffer.alloc(0);
         // create and connect TCP socket
-        this.client = net_websocket_polyfill_1.default
+        this.client = new socket_1.CustomSocket();
+        this.client = this.client
             .connect({
             host: this.options.host,
             port: this.options.port,

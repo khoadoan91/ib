@@ -44,7 +44,7 @@ describe("IBApi reqContractDetails Tests", () => {
             done();
         })
             .on(__1.EventName.error, (err, code, reqId) => {
-            if (reqId == refId)
+            if (reqId === refId)
                 done(`[${reqId}] ${err.message} (#${code})`);
         });
         ib.connect();
@@ -66,7 +66,7 @@ describe("IBApi reqContractDetails Tests", () => {
             done();
         })
             .on(__1.EventName.error, (err, code, reqId) => {
-            if (reqId == refId)
+            if (reqId === refId)
                 done(`[${reqId}] ${err.message} (#${code})`);
         });
         ib.connect();
@@ -89,7 +89,7 @@ describe("IBApi reqContractDetails Tests", () => {
             done();
         })
             .on(__1.EventName.error, (err, code, reqId) => {
-            if (reqId == refId)
+            if (reqId === refId)
                 done(`[${reqId}] ${err.message} (#${code})`);
         });
         ib.connect();
@@ -115,7 +115,7 @@ describe("IBApi reqContractDetails Tests", () => {
             done();
         })
             .on(__1.EventName.error, (err, code, reqId) => {
-            if (reqId == refId)
+            if (reqId === refId)
                 done(`[${reqId}] ${err.message} (#${code})`);
         });
         ib.connect();
