@@ -6,7 +6,7 @@ export {
   AccountSummaryTagName,
   AccountSummaryTagValues,
   AccountSummaryValue,
-  AccountSummaryValues,
+  AccountSummaryValues
 } from "./account/account-summary";
 
 export { AccountUpdate, AccountUpdatesUpdate } from "./account/account-update";
@@ -29,25 +29,25 @@ export { SecurityDefinitionOptionParameterType } from "./contract/sec-def-opt-pa
 export {
   MarketDataTick,
   MarketDataTicks,
-  MarketDataUpdate,
+  MarketDataUpdate
 } from "./market/market-data";
 export { MarketDataType } from "./market/market-data-type";
 export { IBApiTickType };
-import { TickType as IBApiTickType } from "../api/market/tickType";
-import { TickType as IBApiNextTickType } from "./market/tick-type";
+  import { TickType as IBApiTickType } from "../api/market/tickType";
+  import { TickType as IBApiNextTickType } from "./market/tick-type";
 export { IBApiNextTickType };
 
 // pnl
 
-export { PnL } from "./pnl/pnl";
-export { PnLSingle } from "./pnl/pnl-single";
+  export { PnL } from "./pnl/pnl";
+  export { PnLSingle } from "./pnl/pnl-single";
 
 // position
 
 export {
   AccountPositions,
   AccountPositionsUpdate,
-  Position,
+  Position
 } from "./position/position";
 
 // Market depth
@@ -57,7 +57,7 @@ export {
   OrderBookRow,
   OrderBookRowPosition,
   OrderBookRows,
-  OrderBookUpdate,
+  OrderBookUpdate
 } from "./market-depth/order-book";
 
 // Order
@@ -72,9 +72,6 @@ export {
   MarketScannerItem,
   MarketScannerItemRank,
   MarketScannerRows,
-  MarketScannerUpdate,
+  MarketScannerUpdate
 } from "./market-scanner/market-scanner";
 
-// IBApiNext
-
-export { IBApiNext, IBApiNextCreationOptions } from "./api-next";
