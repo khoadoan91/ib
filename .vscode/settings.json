@@ -13,8 +13,8 @@
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true,
-    "node_modules": true,
-    "dist/**": true,
+    "node_modules": false,
+    "dist/**": false,
     "pages/**": true
   },
   "js/ts.implicitProjectConfig.target": "ES2021",

@@ -1,8 +1,8 @@
 {
-  "name": "@stoqey/ib",
+  "name": "@stoqey/ib-browser",
   "version": "1.3.19",
   "private": false,
-  "description": "Interactive Brokers TWS/IB Gateway API client library for Node.js (TS)",
+  "description": "Interactive Brokers TWS/IB Gateway API client library for Node.js (TS) and browser extension",
   "keywords": [
     "interactive",
     "brokers",
@@ -37,7 +37,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/stoqey/ib.git"
+    "url": "git://github.com/khoadoan91/ib.git"
   },
   "license": "MIT",
   "author": {

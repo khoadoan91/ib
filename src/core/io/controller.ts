@@ -3,7 +3,6 @@ import rateLimit from "function-rate-limit";
 
 import { IBApi, IBApiCreationOptions } from "../../api/api";
 import { EventName } from "../../api/data/enum/event-name";
-import configuration from "../../common/configuration";
 import { ErrorCode } from "../../common/errorCode";
 import { Decoder, DecoderCallbacks } from "./decoder";
 import { Encoder, EncoderCallbacks } from "./encoder";
@@ -25,7 +24,7 @@ export class Controller implements EncoderCallbacks, DecoderCallbacks {
     this.socket = new Socket(this, this.options);
     this.commands.pause();
     const rate =
-      options?.maxReqPerSec ?? configuration.max_req_per_second ?? 40;
+      options?.maxReqPerSec ?? 40;
     this.rateLimiter = rateLimit(rate / 10, 1000 / 10, (tokens: unknown[]) => {
       this.socket.send(tokens);
     });

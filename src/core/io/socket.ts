@@ -8,7 +8,6 @@ import {
 } from "../../api/api";
 import { EventName } from "../../api/data/enum/event-name";
 import MIN_SERVER_VER from "../../api/data/enum/min-server-version";
-import configuration from "../../common/configuration";
 import { ErrorCode } from "../../common/errorCode";
 import { Controller } from "./controller";
 import { OUT_MSG_ID } from "./encoder";
@@ -63,7 +62,7 @@ export class Socket {
     this._clientId =
       this.options.clientId !== undefined
         ? Math.floor(this.options.clientId)
-        : configuration.default_client_id;
+        : 0;
     this.options.host = this.options.host;
     this.options.port = this.options.port;
   }
@@ -164,8 +163,8 @@ export class Socket {
     this.client = net
       .connect(
         {
-          host: this.options.host ?? configuration.ib_host,
-          port: this.options.port ?? configuration.ib_port,
+          host: this.options.host,
+          port: this.options.port,
         },
         () => this.onConnect(),
       )
@@ -414,7 +413,7 @@ export class Socket {
   private onConnect(): void {
     // send client version (unless Version > 100)
     if (!this.useV100Plus) {
-      this.send([configuration.client_version]);
+      this.send([66]);
       this.send([this._clientId]);
     } else {
       // Switch to GW API (Version 100+ requires length prefix)
