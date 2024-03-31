@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Socket = exports.ConnectionStatus = void 0;
+const buffer_1 = require("buffer");
 const net_1 = __importDefault(require("net"));
 const util_1 = require("util");
 const api_1 = require("../../api/api");
@@ -65,7 +66,7 @@ class Socket {
         /** `true` if V!00Pls protocol shall be used, `false` otherwise.  */
         this.useV100Plus = true;
         /** Accumulation buffer for fragmented V100 messages */
-        this._v100MessageBuffer = Buffer.alloc(0);
+        this._v100MessageBuffer = buffer_1.Buffer.alloc(0);
         this._clientId =
             this.options.clientId !== undefined
                 ? Math.floor(this.options.clientId)
@@ -121,7 +122,7 @@ class Socket {
         this.dataFragment = "";
         this.neverReceived = true;
         this.waitingAsync = false;
-        this._v100MessageBuffer = Buffer.alloc(0);
+        this._v100MessageBuffer = buffer_1.Buffer.alloc(0);
         // create and connect TCP socket
         this.client = net_1.default
             .connect({
@@ -179,7 +180,7 @@ class Socket {
                     0,
                 ];
             }
-            this.client?.write(Buffer.from(new Uint8Array(utf8Data)));
+            this.client?.write(buffer_1.Buffer.from(new Uint8Array(utf8Data)));
         }
         else {
             this.client?.write(stringData + EOL);
@@ -193,13 +194,13 @@ class Socket {
         if (this.useV100Plus) {
             let dataToParse = data;
             if (this._v100MessageBuffer.length > 0) {
-                dataToParse = Buffer.concat([this._v100MessageBuffer, data]);
+                dataToParse = buffer_1.Buffer.concat([this._v100MessageBuffer, data]);
             }
             if (dataToParse.length > MAX_V100_MESSAGE_LENGTH) {
                 // At this point we have buffered enough data that we have exceeded the max known message length,
                 // at which point this is likely an unrecoverable state and we should discard all prior data,
                 // and disconnect the socket
-                this._v100MessageBuffer = Buffer.alloc(0);
+                this._v100MessageBuffer = buffer_1.Buffer.alloc(0);
                 this.onError(new Error(`Message of size ${dataToParse.length} exceeded max message length ${MAX_V100_MESSAGE_LENGTH}`));
                 this.disconnect();
                 return;
@@ -225,7 +226,7 @@ class Socket {
                 this._v100MessageBuffer = dataToParse.slice(messageBufferOffset);
             }
             else {
-                this._v100MessageBuffer = Buffer.alloc(0);
+                this._v100MessageBuffer = buffer_1.Buffer.alloc(0);
             }
         }
         else {

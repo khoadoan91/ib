@@ -1,3 +1,4 @@
+import { Buffer } from "buffer";
 import net from "net";
 import { TextEncoder } from "util";
 
