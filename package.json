@@ -55,7 +55,7 @@
   "scripts": {
     "build": "yarn clean && yarn tsc",
     "build:watch": "yarn tsc --watch",
-    "clean": "rm -rf dist",
+    "clean": "Remove-Item dist -r -fo",
     "doc": "typedoc --excludeInternal",
     "doc:dev": "typedoc --out ./doc-dev",
     "lint": "eslint . --ext .ts",
