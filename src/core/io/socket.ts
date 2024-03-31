@@ -1,5 +1,5 @@
 import { Buffer } from "buffer";
-import net from "net";
+import net from "net-websocket-polyfill";
 import { TextEncoder } from "util";
 
 import {
@@ -171,7 +171,7 @@ export class Socket {
       )
       .on("data", (data) => this.onData(data))
       .on("close", () => this.onEnd())
-      .on("end", () => this.onEnd())
+      // .on("end", () => this.onEnd())
       .on("error", (error) => this.onError(error));
   }
 

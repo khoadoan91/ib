@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Socket = exports.ConnectionStatus = void 0;
 const buffer_1 = require("buffer");
-const net_1 = __importDefault(require("net"));
+const net_websocket_polyfill_1 = __importDefault(require("net-websocket-polyfill"));
 const util_1 = require("util");
 const api_1 = require("../../api/api");
 const event_name_1 = require("../../api/data/enum/event-name");
@@ -124,14 +124,14 @@ class Socket {
         this.waitingAsync = false;
         this._v100MessageBuffer = buffer_1.Buffer.alloc(0);
         // create and connect TCP socket
-        this.client = net_1.default
+        this.client = net_websocket_polyfill_1.default
             .connect({
             host: this.options.host,
             port: this.options.port,
         }, () => this.onConnect())
             .on("data", (data) => this.onData(data))
             .on("close", () => this.onEnd())
-            .on("end", () => this.onEnd())
+            // .on("end", () => this.onEnd())
             .on("error", (error) => this.onError(error));
     }
     /**

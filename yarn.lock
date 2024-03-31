@@ -1177,6 +1177,11 @@ bent@~7.3.6:
     caseless "~0.12.0"
     is-stream "^2.0.0"
 
+blob-to-buffer@^1.2.8:
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/blob-to-buffer/-/blob-to-buffer-1.2.9.tgz#a17fd6c1c564011408f8971e451544245daaa84a"
+  integrity sha512-BF033y5fN6OCofD3vgHmNtwZWRcq9NLyyxyILx9hfMy1sXYy4ojFl765hJ2lP0YaN2fuxPaLO2Vzzoxy0FLFFA==
+
 brace-expansion@^1.1.7:
   version "1.1.11"
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
@@ -2689,10 +2694,12 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
-net@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/net/-/net-1.0.2.tgz#d1757ec9a7fb2371d83cf4755ce3e27e10829388"
-  integrity sha512-kbhcj2SVVR4caaVnGLJKmlk2+f+oLkjqdKeQlmUtz6nGzOpbcobwVIeSURNgraV/v3tlmGIX82OcPCl0K6RbHQ==
+net-websocket-polyfill@^0.1.1-r3:
+  version "0.1.1-r3"
+  resolved "https://registry.yarnpkg.com/net-websocket-polyfill/-/net-websocket-polyfill-0.1.1-r3.tgz#a1a2bc72cf3da47251402e7861d469e013ea9f82"
+  integrity sha512-ZCI0ICJk+kGrUo3ZYScR9x4Fcm9Pl89sK6nADgVxTc8g+HIjaKMcE4T6Uh9/aZQazEeI9YVuaj/1Pn9NztnN/A==
+  dependencies:
+    blob-to-buffer "^1.2.8"
 
 node-int64@^0.4.0:
   version "0.4.0"
